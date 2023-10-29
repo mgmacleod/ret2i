@@ -5,7 +5,13 @@
 Recursive text to image to text to image ....
 
 
-The idea is to use two generative models in parallel and iteratively, feeding the output of one to the input of the other. More specifically, we start with text-to-image generation and pass a simple initial prompt (in this case, "wavy lines") to the [Stable Diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui) model to get an image. We then feed this to [LLaVA](https://github.com/haotian-liu/LLaVA), a language model that can take images as context and answer questions about them. In this case, we pass in the image from the current iteration and we ask "What do you see here?". The generated description becomes the prompt for the next iteration of text to image generation. and so on for 20 iterations.
+The idea is to use two generative models in parallel and iteratively, feeding the output of one to the input of the other. More specifically:
+
+
+- We start with text-to-image generation via [Stable Diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui) and pass a simple initial prompt (in this case, "wavy lines") to generate an image
+- We then feed this image to [LLaVA](https://github.com/haotian-liu/LLaVA), a language model that can take images as context and answer questions about them 
+    - In this case, we pass in the image from the current iteration and we ask "What do you see here?"
+- The generated description becomes the prompt for the next iteration of text to image generation. and so on for 20 iterations.
 
 
 I did this manually. Then I tried to create some AI agents to do it for me. That part mostly didn't work, sadly.
