@@ -14,7 +14,7 @@ The idea is to use two generative models in parallel and iteratively, feeding th
 - The generated description becomes the prompt for the next iteration of text to image generation. and so on for 20 iterations.
 
 
-I did this manually. Then I tried to create some AI agents to do it for me. That part mostly didn't work, sadly.
+I did this manually. Then I tried to create some AI agents to do it for me. That part mostly didn't work, sadly. Then I tried to create some AI agents to go through the logs from the manual process and generate the current `.md` file. This too didn't entirely work, but one iteration did generate part of the file. Then I needed to edit the file myself...
 
 
 Initial prompt:
