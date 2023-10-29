@@ -1,5 +1,7 @@
 import autogen
 
+# A simple example of using AutoGen with local LLMs, in this case Text Generation WebUI with the openai extension running any supported model
+
 config_list = [
     {
         "api_type": "open_ai",
