@@ -1,6 +1,10 @@
 # Hallucination as art?
 
-> initial text to image prompt: wavy lines
+## Procedure
+
+The idea is to use two generative models in parallel, feeding the output of one to the input of the other. More specifically, we start with text-to-image generation and pass a simple initial prompt (in this case, "wavy lines") to Stable Diffusion model to get an image. We then feed this to LLaVA, a language model that can take images as context and answer questions about them. In this case, we pass in the image from the current iteration and we ask "What do you see here?". The generated description becomes the prompt for the next iteration of text to image generation. and so on. 
+
+> prompt: wavy lines
 
 ## iteration 1
 

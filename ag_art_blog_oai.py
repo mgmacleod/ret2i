@@ -2,9 +2,6 @@
 
 import os, autogen, argparse
 
-log_path = "/home/mgm/development/code/ret2i/log_wavy.csv"
-image_path = "/home/mgm/development/code/ret2i/images/2023-10-27"
-
 
 def create_openai_config_list():
     openai_api_key = os.environ.get("OPENAI_API_KEY")
