@@ -63,9 +63,7 @@ if __name__ == "__main__":
     parser.add_argument("--worker-address", type=str)
     parser.add_argument("--model-name", type=str, default="llava-v1.5-13b")
     parser.add_argument("--max-new-tokens", type=int, default=512)
-    parser.add_argument(
-        "--message", type=str, default="Tell me a story with more than 1000 words."
-    )
+    parser.add_argument("--message", type=str, default="Tell me a joke.")
     args = parser.parse_args()
 
     main()
