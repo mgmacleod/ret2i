@@ -8,3 +8,8 @@ conda activate ret2i
 python -m pip install -r requirements.txt
 
 ```
+
+### Update
+```bash
+python -m pip install -r requirements.txt --upgrade
+```
