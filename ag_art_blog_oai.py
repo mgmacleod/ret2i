@@ -76,8 +76,7 @@ if __name__ == "__main__":
         config_list = create_local_config_list(args.api_url)
 
     task_def = """
-    Write Python code to load the local CSV file with absolute path `/home/mgm/development/code/ret2i/log_wavy.csv` file and then print out the `prompt` and `filename` columns for each record. When you have working code, save the code to
-    a file called `print_prompt_and_image_pairs.py` and terminate the task.
+    Write a python function to load the local CSV file with absolute path `/home/mgm/development/code/ret2i/log_wavy.csv` file and return a dictionary in which each key is a value from the `prompt` column in the CSV file and each value is the `filename` column. Store the resulting code in a file called `step1.py`.
     """
     main(config_list=config_list, task=task_def)
     # models = get_model_list()
