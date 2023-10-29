@@ -100,28 +100,28 @@ The idea is to use two generative models in parallel, feeding the output of one 
 
 ![Alt text](images/2023-10-27/00015-3636029602.png)
 
-> Description: 
+> Description: a spacious living room filled with various furniture and an abundance of potted plants. There are two couches in the room, one located on the left side and the other on the right side. A chair is also present, situated near the left couch. The living room is adorned with several potted plants, some of which are placed on the floor and others on the windowsill. The plants are of different sizes and are scattered throughout the room, adding a touch of greenery and life to the space. In addition to the plants, there are a few books placed on the floor, and a cup can be seen on a surface in the room. The overall atmosphere of the living room is cozy and inviting, with the plants and furniture creating a comfortable and relaxing environment.
 
 ## iteration 17
 
 ![Alt text](images/2023-10-27/00016-185524266.png)
 
-> Description: 
+> Description: a cozy living room with a large window that allows natural light to fill the space. The room is furnished with a couch and a coffee table, both placed near the window. There are several potted plants in the room, with one large plant on the left side, another on the right side, and a smaller one on the coffee table. In addition to the plants, there are two vases in the room, one on the coffee table and another on the floor. A chair is also present in the room, positioned near the couch. The overall atmosphere of the living room is inviting and comfortable, with the plants and natural light creating a pleasant environment.
 
 ## iteration 18
 
 ![Alt text](images/2023-10-27/00017-3583770583.png)
 
-> Description: 
+> Description: a spacious living room filled with various furniture and an abundance of potted plants. There are two couches in the room, one located on the left side and the other on the right side. A chair is also present, situated near the left couch. The living room is adorned with several potted plants, some of which are placed on the floor and others on the windowsill. The plants are of different sizes and are scattered throughout the room, adding a touch of greenery and life to the space. In addition to the plants, there are a few books placed on the floor, and a cup can be seen on a surface in the room. The overall atmosphere of the living room is cozy and inviting, with the plants and furniture creating a comfortable and relaxing environment.
 
 ## iteration 19
 
 ![Alt text](images/2023-10-27/00019-3279301738.png)
 
-> Description: 
+> Description: a cozy living room with a large window that allows natural light to fill the space. The room is furnished with a couch and a bench, both placed near the window. The couch is positioned on the right side of the room, while the bench is located on the left side. The living room is adorned with several potted plants, creating a lush and green atmosphere. There are three large potted plants placed around the room, with one on the left side, one in the center, and another on the right side. Additionally, there are two smaller potted plants, one on the left side and another on the right side of the room. The combination of the plants and the natural light from the window creates a serene and inviting environment.
 
 ## iteration 20
 
 ![Alt text](images/2023-10-27/00020-1410282262.png)
 
-> Description: 
+> Description: a cozy living room with a large couch situated in the center of the space. The couch is surrounded by several potted plants, creating a lush and green atmosphere. There are at least five potted plants in the room, with some placed near the couch and others scattered around the room. In addition to the plants, there are two vases in the room, one located near the couch and the other placed further away. A book can be seen on the couch, possibly indicating that someone was recently reading or relaxing in the room. The overall ambiance of the living room is inviting and comfortable, with the plants and furniture creating a pleasant environment.
