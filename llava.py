@@ -3,7 +3,9 @@ import json
 
 import requests
 
-# from llava.conversation import default_conversation
+from conversation import conv_llava_v1_mmtag
+
+# simple test example of calling the LLaVA controller APIs (modified from the LLaVA project)
 
 
 def main():
@@ -26,7 +28,9 @@ def main():
     if worker_addr == "":
         return
 
-    prompt = args.message
+    conv = conv_llava_v1_mmtag.copy()
+    conv.append_message(conv.roles[0], args.message)
+    prompt = conv.get_prompt()
 
     headers = {"User-Agent": "LLaVA Client"}
     pload = {
@@ -34,7 +38,7 @@ def main():
         "prompt": prompt,
         "max_new_tokens": args.max_new_tokens,
         "temperature": 0.7,
-        "stop": "###",
+        "stop": conv.sep,
     }
     response = requests.post(
         worker_addr + "/worker_generate_stream",
@@ -43,14 +47,13 @@ def main():
         stream=True,
     )
 
-    print(prompt)
-
+    print(prompt.replace(conv.sep, "\n"), end="")
     for chunk in response.iter_lines(
         chunk_size=8192, decode_unicode=False, delimiter=b"\0"
     ):
         if chunk:
             data = json.loads(chunk.decode("utf-8"))
-            output = data["text"].split("###")[-1]
+            output = data["text"].split(conv.sep)[-1]
             print(output, end="\r")
     print("")
 
@@ -63,7 +66,7 @@ if __name__ == "__main__":
     parser.add_argument("--worker-address", type=str)
     parser.add_argument("--model-name", type=str, default="llava-v1.5-13b")
     parser.add_argument("--max-new-tokens", type=int, default=512)
-    parser.add_argument("--message", type=str, default="Tell me a joke.")
+    parser.add_argument("--message", type=str, default="tell me a joke about a monkey.")
     args = parser.parse_args()
 
     main()
