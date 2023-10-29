@@ -58,7 +58,7 @@ def main(config_list, task):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--provider", type=str, default="openai")
+    parser.add_argument("--provider", type=str, default="local")
     parser.add_argument("--model", type=str, default="gpt-3.5-turbo-16k")
     parser.add_argument("--api-url", type=str, default="http://localhost:5001/v1")
     parser.add_argument(
@@ -75,11 +75,11 @@ if __name__ == "__main__":
     else:
         config_list = create_local_config_list(args.api_url)
 
-    main(config_list=config_list, task=args.task)
+    task_def = """
+    Write Python code to load the local CSV file with absolute path `/home/mgm/development/code/ret2i/log_wavy.csv` file and then print out the `prompt` and `filename` columns for each record. When you have working code, save the code to
+    a file called `print_prompt_and_image_pairs.py` and terminate the task.
+    """
+    main(config_list=config_list, task=task_def)
     # models = get_model_list()
 
     # demo = build_demo(args.embed)
-    # task_def = """
-    # Write Python code to load the local CSV file with absolute path `/home/mgm/development/code/ret2i/log_wavy.csv` file and then print out the `prompt` and `filename` columns for each record. When you have working code, save the code to
-    # a file called `print_prompt_and_image_pairs.py` and terminate the task.
-    # """
