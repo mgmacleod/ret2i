@@ -40,7 +40,7 @@ Otherwise, reply CONTINUE, or the reason why the task is not solved yet.""",
 
 task = """
 Write Python code to load the local `log_wavy.csv` file and then print out the `prompt` and `filename` columns for each record. When you have working code, save the code to 
-a file called `print_that_shit.py` and terminate the task.
+a file called `print_prompt_and_image_pairs.py` and terminate the task.
 """
 
 user_proxy.initiate_chat(assistant, message=task)
