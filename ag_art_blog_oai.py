@@ -1,6 +1,6 @@
 # AutoGen using OAI to process the logs from a recursive AI art project and produce a markdown file
 
-import os, autogen
+import os, autogen, argparse
 
 log_path = "/home/mgm/development/code/ret2i/log_wavy.csv"
 image_path = "/home/mgm/development/code/ret2i/images/2023-10-27"
@@ -11,6 +11,18 @@ def create_openai_config_list():
     config_list = [
         {"api_type": "open_ai", "api_key": openai_api_key, "model": "gpt-3.5-turbo-16k"}
     ]
+    return config_list
+
+
+def create_local_config_list(base_url):
+    config_list = [
+        {
+            "api_type": "open_ai",
+            "api_base": base_url,
+            "api_key": "sk-111111111111111111111111111111",
+        }
+    ]
+
     return config_list
 
 
@@ -45,7 +57,29 @@ def main(config_list, task):
 
 
 if __name__ == "__main__":
-    task_def = """
-    Write Python code to load the local CSV file with absolute path `/home/mgm/development/code/ret2i/log_wavy.csv` file and then print out the `prompt` and `filename` columns for each record. When you have working code, save the code to 
-    a file called `print_prompt_and_image_pairs.py` and terminate the task.
-    """
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--provider", type=str, default="openai")
+    parser.add_argument("--model", type=str, default="gpt-3.5-turbo-16k")
+    parser.add_argument("--api-url", type=str, default="http://localhost:5001/v1")
+    parser.add_argument(
+        "--task",
+        type=str,
+        default="Write python code to print the numbers 1 to 100 and then store the resulting code in a .py file.",
+    )
+    args = parser.parse_args()
+
+    config_list = None
+
+    if args.provider == "openai":
+        config_list = create_openai_config_list()
+    else:
+        config_list = create_local_config_list(args.api_url)
+
+    main(config_list=config_list, task=args.task)
+    # models = get_model_list()
+
+    # demo = build_demo(args.embed)
+    # task_def = """
+    # Write Python code to load the local CSV file with absolute path `/home/mgm/development/code/ret2i/log_wavy.csv` file and then print out the `prompt` and `filename` columns for each record. When you have working code, save the code to
+    # a file called `print_prompt_and_image_pairs.py` and terminate the task.
+    # """
