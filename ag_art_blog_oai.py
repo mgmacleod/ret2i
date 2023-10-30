@@ -73,7 +73,10 @@ if __name__ == "__main__":
         config_list = create_local_config_list(args.api_url)
 
     task_def = """
-    Write a python function to load the local CSV file with absolute path `/home/mgm/development/code/ret2i/log_wavy.csv` file and return a dictionary in which each key is a value from the `prompt` column in the CSV file and each value is the `filename` column. Store the resulting code in a file called `step1.py`.
+    Solve the following tasks by writing Python code. Write the the resulting code in a file called `gen_code.py`.
+
+    1. Write a function to create a file containing randomly generated time series data of variable sequence length.
+    2. Write a function to take in a file and plot the data in a graph; the graph should be saved to an image file rather than displayed on screen.
     """
     main(config_list=config_list, task=task_def)
     # models = get_model_list()
