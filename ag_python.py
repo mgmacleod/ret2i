@@ -1,4 +1,4 @@
-# AutoGen using OAI to process the logs from a recursive AI art project and produce a markdown file
+# Basic example of AutoGen using OpenAI API or local LLMs (Text Generation WebUI with the openai extension) to generate Python code and solve problems
 
 import os, autogen, argparse
 
@@ -34,7 +34,7 @@ def main(config_list, task):
     assistant = autogen.AssistantAgent(
         name="Coder",
         llm_config=llm_config,
-        system_message="You are a coder specializing in Python. Your job is to write the code to solve problems assigned to you.",
+        system_message="You are a coder specializing in Python. Your job is to write the code to solve problems assigned to you. You are very careful and diligent.",
     )
 
     user_proxy = autogen.UserProxyAgent(
@@ -75,8 +75,8 @@ if __name__ == "__main__":
     task_def = """
     Solve the following tasks by writing Python code. Write the the resulting code in a file called `gen_code.py`.
 
-    1. Write a function to create a file containing randomly generated time series data of variable sequence length.
-    2. Write a function to take in a file and plot the data in a graph; the graph should be saved to an image file rather than displayed on screen.
+    1. Write a function to create a file containing randomly generated time series data of variable sequence length. The function should take in a parameter `n` which is the number of data points to generate. The data should be stored in a file called `data.csv`.
+    2. Write a function to take in a file containing time series data and plot the data in a graph; the graph should be saved to an image file rather than displayed on screen. The name of the image file should be a parameter to the function.
     """
     main(config_list=config_list, task=task_def)
     # models = get_model_list()
