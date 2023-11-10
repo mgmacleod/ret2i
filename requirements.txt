@@ -1,6 +1,5 @@
-dotenv
+
 matplotlib
-pyautogen
 docker
 langchain
 beautifulsoup4
@@ -18,3 +17,5 @@ tqdm
 chromadb
 gpt4all 
 llama-cpp-python
+pyautogen~=0.2.0b3
+pyautogen[lmm]~=0.2.0b3
