@@ -1,19 +1,17 @@
-import json
-import requests
-import io
 import base64
+import io
+import json
+
+import requests
 from PIL import Image
 
-url = "http://192.168.0.110:8860"
+url = "http://localhost:8860"
 
-payload = {
-    "prompt": "puppy dog",
-    "steps": 5
-}
+payload = {"prompt": "puppy dog", "steps": 5}
 
-response = requests.post(url=f'{url}/sdapi/v1/txt2img', json=payload)
+response = requests.post(url=f"{url}/sdapi/v1/txt2img", json=payload)
 
 r = response.json()
 
-image = Image.open(io.BytesIO(base64.b64decode(r['images'][0])))
-image.save('output.png')
+image = Image.open(io.BytesIO(base64.b64decode(r["images"][0])))
+image.save("output.png")
